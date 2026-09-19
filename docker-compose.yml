@@ -1,0 +1,21 @@
+services:
+  model:
+    build: .
+    image: courtvision-model:latest
+    container_name: courtvision-model
+    ports:
+      - "5000:5000"
+    volumes:
+      # 權重掛載，不寫進 image；換模型不需重建
+      - ./weights:/app/weights:ro
+    environment:
+      - WEIGHTS_PATH=/app/weights/player_only_v1.pt
+      - MODEL_VERSION=player_only_v1
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped

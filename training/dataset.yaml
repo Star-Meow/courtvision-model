@@ -1,0 +1,9 @@
+# YOLOv7 dataset config（階段 1）
+# 類別固定為 player，class_id 恆為 0；加類別時只能往後編號，不可改動既有 id。
+
+path: ../training/data
+train: images/train
+val: images/val
+
+names:
+  0: player

@@ -1,0 +1,40 @@
+# ===== 權重不進 Git（weights/* 除外於 .gitkeep）=====
+weights/*
+!weights/.gitkeep
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# ===== 訓練資料（圖片與標籤不進 Git，用 DVC / S3 控管）=====
+training/data/images/
+training/data/labels/
+
+# ===== YOLOv7 訓練輸出 =====
+training/runs/
+
+# ===== 實驗產物內的權重 =====
+training/experiments/**/*.pt
+training/experiments/**/weights/
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# ===== 環境與機敏檔案 =====
+.env
+*.key
+
+# ===== IDE / OS =====
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

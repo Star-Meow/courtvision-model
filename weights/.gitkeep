@@ -1,0 +1,2 @@
+權重置於此目錄，一律不進 Git（見 .gitignore），用 DVC / S3 / Git LFS 控管。
+命名帶版本，例如 player_only_v1.pt。

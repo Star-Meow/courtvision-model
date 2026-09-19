@@ -1,0 +1,2 @@
+# 統一文字檔換行為 LF：開發在 Windows、推論在 Linux Docker，避免 CRLF 混入。
+* text=auto eol=lf
